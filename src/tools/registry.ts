@@ -40,6 +40,7 @@ import { deleteMetafields } from "./deleteMetafields.js";
 // Convenience / cross-resource tools
 import { manageTags } from "./manageTags.js";
 import { setInventoryQuantities } from "./setInventoryQuantities.js";
+import { bulkStageUpload } from "./bulkOperations.js";
 
 // Configuration & discovery tools
 import { getShopInfo } from "./getShopInfo.js";
@@ -94,9 +95,10 @@ export const tools: ShopifyTool[] = [
   getMetafields,
   setMetafields,
   deleteMetafields,
-  // Convenience (2)
+  // Convenience (3)
   manageTags,
   setInventoryQuantities,
+  bulkStageUpload,
   // Configuration & discovery (5)
   getShopInfo,
   getMetafieldDefinitions,
