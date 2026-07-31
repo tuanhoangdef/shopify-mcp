@@ -14,7 +14,7 @@ MCP Server for Shopify API, enabling interaction with store data through GraphQL
 ## Features
 
 - **Product Management**: Full CRUD for products, variants, and options (8 tools)
-- **Customer Management**: Full CRUD, merge, and address management (8 tools)
+- **Customer Management**: Full CRUD, merge, address management, and account invites (9 tools)
 - **Order Management**: Smart lookup, cancel, close/open, mark as paid, fulfillment, refunds (10 tools)
 - **Metafield Management**: Get, set, and delete metafields on any resource (3 tools)
 - **Inventory Management**: Set absolute inventory quantities at locations (1 tool)
@@ -277,7 +277,7 @@ All list query tools (`get-products`, `get-customers`, `get-orders`, `get-custom
      - `productId` (string, required): Shopify product GID
      - `variantIds` (array of strings, required): Variant GIDs to delete
 
-### Customer Management (8 tools)
+### Customer Management (9 tools)
 
 1. **`get-customers`**
 
@@ -351,6 +351,15 @@ All list query tools (`get-products`, `get-customers`, `get-orders`, `get-custom
      - `addressId` (string, optional): Address GID (required for update/delete)
      - `address` (object, optional): Address fields (required for create/update): `address1`, `address2`, `city`, `company`, `countryCode`, `firstName`, `lastName`, `phone`, `provinceCode`, `zip`
      - `setAsDefault` (boolean, optional): Set as customer's default address
+
+8. **`send-customer-account-invite-email`**
+
+   - Send a customer account invite email so the customer can activate their account
+   - Inputs:
+     - `id` (string, required): Shopify customer ID (numeric only, e.g. `"6276879810626"`)
+     - `customMessage` (string, optional): Custom message body for the invite email
+     - `subject` (string, optional): Custom subject line for the invite email
+   - Returns: `customer` (`id`, `email`, `state`)
 
 ### Order Management (10 tools)
 

@@ -27,6 +27,7 @@ import { updateCustomer } from "./updateCustomer.js";
 import { deleteCustomer } from "./deleteCustomer.js";
 import { mergeCustomers } from "./mergeCustomers.js";
 import { manageCustomerAddress } from "./manageCustomerAddress.js";
+import { sendCustomerAccountInviteEmail } from "./sendCustomerAccountInviteEmail.js";
 // Metafield tools
 import { getMetafields } from "./getMetafields.js";
 import { setMetafields } from "./setMetafields.js";
@@ -72,7 +73,7 @@ export const tools = [
     orderMarkAsPaid,
     createFulfillment,
     createRefund,
-    // Customers (8)
+    // Customers (9)
     getCustomers,
     getCustomerById,
     getCustomerOrders,
@@ -81,6 +82,7 @@ export const tools = [
     deleteCustomer,
     mergeCustomers,
     manageCustomerAddress,
+    sendCustomerAccountInviteEmail,
     // Metafields (3)
     getMetafields,
     setMetafields,
