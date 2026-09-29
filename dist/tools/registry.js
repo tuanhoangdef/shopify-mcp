@@ -52,6 +52,11 @@ import { getInventoryLevels } from "./getInventoryLevels.js";
 import { getInventoryItems } from "./getInventoryItems.js";
 import { getPriceLists } from "./getPriceLists.js";
 import { getProductVariantsDetailed } from "./getProductVariantsDetailed.js";
+// Media & inventory-item writes
+import { stageFileUpload } from "./stageFileUpload.js";
+import { productCreateMedia } from "./productCreateMedia.js";
+import { inventoryItemUpdate } from "./inventoryItemUpdate.js";
+import { getBulkOperation } from "./getBulkOperation.js";
 export const tools = [
     // Products (8)
     getProducts,
@@ -107,4 +112,9 @@ export const tools = [
     getInventoryItems,
     getPriceLists,
     getProductVariantsDetailed,
+    // Media & inventory-item writes (4)
+    stageFileUpload,
+    productCreateMedia,
+    inventoryItemUpdate,
+    getBulkOperation,
 ];
