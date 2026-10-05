@@ -27,7 +27,12 @@ const CreateRefundInputSchema = z.object({
     .optional()
     .describe("Shipping cost refund"),
   note: z.string().optional().describe("Note attached to the refund"),
-  notify: z.boolean().optional().describe("Whether to send refund notification to customer"),
+  notify: z
+    .boolean()
+    .default(false)
+    .describe(
+      "Send the refund notification to the customer. Defaults to FALSE: a migration replays refunds that already happened, and the shopper has been told once already",
+    ),
   currency: z.string().optional().describe("Currency code if different from shop currency (presentment currency)"),
 });
 
@@ -96,9 +101,7 @@ const createRefund = {
       if (input.note) {
         refundInput.note = input.note;
       }
-      if (input.notify !== undefined) {
-        refundInput.notify = input.notify;
-      }
+      refundInput.notify = input.notify;
       if (input.currency) {
         refundInput.currency = input.currency;
       }

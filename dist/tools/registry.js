@@ -11,6 +11,7 @@ import { manageProductOptions } from "./manageProductOptions.js";
 import { getOrders } from "./getOrders.js";
 import { getOrderById } from "./getOrderById.js";
 import { updateOrder } from "./updateOrder.js";
+import { createOrder } from "./createOrder.js";
 import { createDraftOrder } from "./createDraftOrder.js";
 import { completeDraftOrder } from "./completeDraftOrder.js";
 import { orderCancel } from "./orderCancel.js";
@@ -84,6 +85,7 @@ export const tools = [
     getOrders,
     getOrderById,
     updateOrder,
+    createOrder,
     createDraftOrder,
     completeDraftOrder,
     orderCancel,
