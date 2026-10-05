@@ -68,6 +68,22 @@ import { productCreateMedia } from "./productCreateMedia.js";
 import { inventoryItemUpdate } from "./inventoryItemUpdate.js";
 import { getBulkOperation } from "./getBulkOperation.js";
 
+// Collection write tools
+import { createCollection } from "./createCollection.js";
+import { updateCollection } from "./updateCollection.js";
+import { deleteCollection } from "./deleteCollection.js";
+
+// Online Store page tools
+import { getPages } from "./getPages.js";
+import { createPage } from "./createPage.js";
+import { updatePage } from "./updatePage.js";
+import { deletePage } from "./deletePage.js";
+
+// Discount tools
+import { getDiscounts } from "./getDiscounts.js";
+import { createDiscountCode } from "./createDiscountCode.js";
+import { deleteDiscountCode } from "./deleteDiscountCode.js";
+
 export const tools: ShopifyTool[] = [
   // Products (8)
   getProducts,
@@ -128,4 +144,16 @@ export const tools: ShopifyTool[] = [
   productCreateMedia,
   inventoryItemUpdate,
   getBulkOperation,
+  // Collections, pages and discounts: the three entities the migration bundle
+  // maps field by field and had no way to write (10)
+  createCollection,
+  updateCollection,
+  deleteCollection,
+  getPages,
+  createPage,
+  updatePage,
+  deletePage,
+  getDiscounts,
+  createDiscountCode,
+  deleteDiscountCode,
 ];
